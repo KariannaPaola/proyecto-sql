@@ -184,7 +184,13 @@ DELETE FROM `productos` WHERE id = 4
 
 *Limpieza de Usuarios:  Borra a los usuarios que no han realizado ninguna compra (Usa una subconsulta o LEFT JOIN para identificarlos):
 
-SELECT u.nombre FROM usuarios u LEFT JOIN compras c ON u.id = c.usuario_id WHERE c.id is NULL
+Para identificarlos: 
+
+SELECT u.id FROM usuarios u LEFT JOIN compras c ON u.id = c.usuario_id WHERE c.id is NULL
+
+Para eliminarlos:
+
+DELETE FROM usuarios WHERE id IN (2, 3)
 
 
 
